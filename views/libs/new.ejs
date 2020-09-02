@@ -1,0 +1,30 @@
+<%- include("../partials/header") %>
+
+
+<div class ='row' style = 'padding-top: 20px;'> 
+    <h1 class = 'mx-auto'>Create a New Lib</h1>
+</div>
+
+<div class ='row'> 
+    <div style="width: 30%; margin: 25px auto;">
+        <form action="/libs" method = "POST">
+            <div class = 'form-group'>
+                <input class = 'form-control' type = 'text', name = 'name', placeholder="lib name">
+            </div>
+            <div class = 'form-group'>
+                <input class = 'form-control' type = 'text', name = 'image', placeholder="image url for this lib">
+            </div>
+            <div class = 'form-group'>
+                <button class="btn btn-primary btn-block">Submit</button>
+            </div>
+            
+        </form>
+        <a href="/libs">Back</a>
+    </div>
+</div>
+
+
+
+
+
+<%- include("../partials/footer") %>

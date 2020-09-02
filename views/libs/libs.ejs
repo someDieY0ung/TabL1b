@@ -1,0 +1,33 @@
+<%- include("../partials/header") %>
+
+
+<%# jumbotron %>
+<div id ="jumbotron1" class="jumbotron">
+    <h1 class="display-4">TabL1b</h1>
+    <h6 class="lead">where to store and view your tabs</h6>
+    <hr class="my-4">
+    <p class="lead"></p>
+    <a class="btn btn-primary btn-lg" href="/libs/new" role="button">Create New L1b</a>
+</div>
+
+<div class = 'row text-center'>
+    <% libs.forEach(function(lib){ %>
+        <div class = 'col-md-6 col-lg-4'>
+
+            <div class="card" style="width: 18rem;">
+                <img src="<%= lib.image %>" class="card-img-top" >
+                <div class="card-body">
+                    <h5 class="card-title"><%= lib.name %></h5>
+                    
+                    <a href="/libs/<%= lib._id%>" class="btn btn-outline-info">Tabs</a>
+                    
+                </div>
+                
+            </div>
+        </div>
+    <%}); %>
+
+</div>
+
+
+<%- include("../partials/footer") %>

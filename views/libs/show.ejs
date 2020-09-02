@@ -1,0 +1,53 @@
+<%- include("../partials/header") %>
+
+
+<div class='row text-center' style = 'padding-top: 20px;'>
+    <div class='col-lg-3 col-md-4'>
+        <div class="card">
+            <div class="card-header font-weight-bold">
+                <%=Lib.name%>
+            </div>
+
+            <ul class="list-group list-group-flush">
+                <% Lib.notations.forEach((notation)=>{ %>
+                    <a href ="/libs/<%= Lib._id%>/notations/<%=notation._id%>" class = 'list-group-item list-group-item-action'><%=notation.title %></a> 
+                <%})%>
+            </ul>
+            <div class="card-footer">
+                <a href="/libs/<%= Lib._id%>/notations/new" class="btn btn-outline-secondary btn-block">New Tab</a>
+            </div>
+            
+                
+            
+            
+        </div>            
+    </div>
+
+    <div class="col-lg-9 col-md-8 d-flex justify-content-center">
+
+        <div class="card col-lg-6" style='padding: 0;'>
+            <img src="<%= Lib.image%>" class="card-img-top" alt="...">
+            <% if(currentUser && Lib.author.id.equals(currentUser._id)){ %>
+                <div class="card-body">
+                    <a href="/libs/<%= Lib._id%>/edit" class="btn btn-outline-warning float-left">Edit Lib Profile</a>
+                    <form action ="/libs/<%= Lib._id%>/?_method=DELETE" method = "POST">
+                        <button class="btn btn-outline-danger float-right">Delete Lib</button>
+                    </form>
+                </div>
+            <% } %>
+            
+            </div>
+        
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<%- include("../partials/footer") %>
